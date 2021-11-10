@@ -1,0 +1,16 @@
+#lang racket
+(define-struct complex-num (real im))
+
+(define (show-i z)
+  (cond
+    [(< 0 (complex-num-im z))
+     (format "~a + ~si" (complex-num-real z) (complex-num-im z))]
+    [(> 0 (complex-num-im z))
+     (format "~a - ~si" (complex-num-real z) (abs (complex-num-im z)))]
+    [else
+     (format "~a" (complex-num-real z))]))
+
+
+(define z1 (make-complex-num 3 2))
+(define z2 (make-complex-num 3 -5))
+(define z3 (make-complex-num 3 0))

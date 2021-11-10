@@ -1,0 +1,7 @@
+#lang racket
+(require 2htdp/image)
+
+(define-struct posn (x y))
+
+
+
